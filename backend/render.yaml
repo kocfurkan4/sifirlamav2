@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: silah-sifirlama-backend
+    env: node
+    region: frankfurt
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CORS_ORIGIN
+        value: https://sifirlamav2.vercel.app
+      - key: MONGODB_URI
+        fromDatabase:
+          name: silah-sifirlama-db
+          property: connectionString
+
+databases:
+  - name: silah-sifirlama-db
+    databaseName: sifirlamadb
+    plan: free
