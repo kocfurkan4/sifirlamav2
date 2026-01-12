@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import api from '@/lib/api'
 
 export default function DashboardPage() {
@@ -85,17 +86,17 @@ export default function DashboardPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-white rounded-lg shadow p-6">
             <h3 className="text-xl font-bold text-gray-900 mb-4">Silahlarım</h3>
-            <p className="text-gray-600">Henüz silah eklenmemiş.</p>
-            <button className="mt-4 bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg transition">
-              Yeni Silah Ekle
-            </button>
+            <p className="text-gray-600">Silahlarınızı yönetin ve sıfırlama geçmişini görün.</p>
+            <Link href="/weapons" className="mt-4 inline-block bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg transition">
+              Silahlarımı Görüntüle
+            </Link>
           </div>
 
           <div className="bg-white rounded-lg shadow p-6">
             <h3 className="text-xl font-bold text-gray-900 mb-4">Son Sıfırlamalar</h3>
-            <p className="text-gray-600">Henüz sıfırlama yapılmamış.</p>
-            <button className="mt-4 bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg transition">
-              Yeni Sıfırlama
+            <p className="text-gray-600">Yakında eklenecek...</p>
+            <button disabled className="mt-4 bg-gray-400 text-white px-4 py-2 rounded-lg cursor-not-allowed">
+              Yeni Sıfırlama (Yakında)
             </button>
           </div>
         </div>
