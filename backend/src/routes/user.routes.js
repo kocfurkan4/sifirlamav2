@@ -7,8 +7,7 @@ const User = require('../models/User.model');
 router.get('/me', authMiddleware, async (req, res) => {
   try {
     const user = await User.findById(req.userId)
-      .select('-password')
-      .populate('weapons');
+      .select('-password');
 
     if (!user) {
       return res.status(404).json({
@@ -18,6 +17,7 @@ router.get('/me', authMiddleware, async (req, res) => {
 
     res.json(user);
   } catch (error) {
+    console.error('Get user error:', error);
     res.status(500).json({
       error: 'Sunucu hatası',
       message: error.message

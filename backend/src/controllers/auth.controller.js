@@ -129,8 +129,7 @@ exports.login = async (req, res) => {
 exports.getCurrentUser = async (req, res) => {
   try {
     const user = await User.findById(req.userId)
-      .select('-password')
-      .populate('weapons');
+      .select('-password');
 
     if (!user) {
       return res.status(404).json({
