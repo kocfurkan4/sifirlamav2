@@ -39,12 +39,12 @@ app.get('/', (req, res) => {
   });
 });
 
-// API Routes (will be added)
-// app.use('/api/auth', require('./routes/auth.routes'));
+// API Routes
+app.use('/api/auth', require('./routes/auth.routes'));
+app.use('/api/users', require('./routes/user.routes'));
 // app.use('/api/weapons', require('./routes/weapon.routes'));
 // app.use('/api/shooting', require('./routes/shooting.routes'));
 // app.use('/api/analysis', require('./routes/analysis.routes'));
-// app.use('/api/users', require('./routes/user.routes'));
 
 // Error handling middleware
 app.use((err, req, res, next) => {
