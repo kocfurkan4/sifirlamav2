@@ -1,0 +1,90 @@
+silah-sifirlama-app/
+│
+├── 📖 README.md                      # Ana dokümantasyon
+├── 🚀 HIZLI_BASLANGIC.md            # Hızlı başlangıç kılavuzu
+├── 📋 PROJE_PLANI.md                # Detaylı proje planı
+│
+├── 🔧 backend/                       # Backend API (Node.js + Express)
+│   ├── package.json                  # Backend bağımlılıkları
+│   ├── .env.example                  # Environment variables örneği
+│   └── src/
+│       ├── server.js                 # Ana sunucu dosyası
+│       ├── models/                   # MongoDB modelleri
+│       │   ├── User.model.js         # Kullanıcı şeması
+│       │   ├── Weapon.model.js       # Silah profilleri
+│       │   └── ShootingSession.model.js # Atış oturumu
+│       ├── controllers/              # İş mantığı
+│       │   └── auth.controller.js    # Kimlik doğrulama
+│       ├── routes/                   # API endpoint'leri
+│       │   ├── auth.routes.js        # Auth routes
+│       │   ├── weapon.routes.js      # Weapon routes
+│       │   ├── shooting.routes.js    # Shooting routes
+│       │   ├── analysis.routes.js    # Analysis routes
+│       │   └── user.routes.js        # User routes
+│       ├── middleware/               # Middleware fonksiyonları
+│       │   └── auth.middleware.js    # JWT doğrulama
+│       ├── services/                 # İş servisleri
+│       └── utils/                    # Yardımcı fonksiyonlar
+│
+├── 💻 web/                           # Web Uygulaması (Next.js 14)
+│   ├── package.json                  # Web bağımlılıkları
+│   ├── next.config.js                # Next.js yapılandırması
+│   ├── tailwind.config.js            # Tailwind CSS yapılandırması
+│   ├── tsconfig.json                 # TypeScript yapılandırması
+│   ├── postcss.config.js             # PostCSS yapılandırması
+│   └── src/
+│       ├── app/                      # Next.js 14 App Router
+│       │   ├── layout.tsx            # Ana layout
+│       │   ├── page.tsx              # Ana sayfa (landing)
+│       │   ├── globals.css           # Global CSS
+│       │   ├── login/                # Login sayfası
+│       │   ├── register/             # Kayıt sayfası
+│       │   ├── dashboard/            # Dashboard
+│       │   └── zeroing/              # Sıfırlama sayfası
+│       ├── components/               # React bileşenleri
+│       │   ├── ui/                   # UI bileşenleri
+│       │   ├── forms/                # Form bileşenleri
+│       │   └── charts/               # Grafik bileşenleri
+│       ├── lib/                      # Yardımcı kütüphaneler
+│       │   ├── api.ts                # API client
+│       │   └── utils.ts              # Utility fonksiyonlar
+│       ├── hooks/                    # Custom React hooks
+│       ├── stores/                   # Zustand state stores
+│       └── types/                    # TypeScript tipleri
+│
+└── 📱 mobile/                        # Mobil Uygulama (React Native)
+    ├── package.json                  # Mobile bağımlılıkları
+    ├── app.json                      # Expo yapılandırması
+    └── src/
+        ├── screens/                  # Uygulama ekranları
+        │   ├── HomeScreen.tsx
+        │   ├── LoginScreen.tsx
+        │   ├── DashboardScreen.tsx
+        │   └── ZeroingScreen.tsx
+        ├── components/               # UI bileşenleri
+        ├── navigation/               # Navigation yapılandırması
+        ├── services/                 # API servisleri
+        └── utils/                    # Yardımcı fonksiyonlar
+
+📊 Toplam Dosya Sayısı:
+├── Backend: ~15 dosya
+├── Web: ~30 dosya
+├── Mobile: ~20 dosya
+└── Dokümantasyon: 3 dosya
+
+🎯 Ana Özellikler:
+✅ Kullanıcı kayıt/giriş sistemi
+✅ JWT tabanlı güvenlik
+✅ MongoDB veritabanı
+✅ RESTful API
+✅ Responsive web tasarım
+✅ Cross-platform mobil app
+✅ AI destekli analiz
+✅ Gerçek zamanlı sıfırlama hesaplamaları
+
+🚀 Teknolojiler:
+- Backend: Node.js + Express + MongoDB
+- Web: Next.js 14 + TypeScript + Tailwind
+- Mobile: React Native + Expo
+- AI: TensorFlow.js
+- Image: Sharp + OpenCV
