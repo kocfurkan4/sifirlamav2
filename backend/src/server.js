@@ -11,10 +11,27 @@ const app = express();
 app.use(helmet());
 
 // CORS configuration for production
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://sifirlamav2.vercel.app',
+  process.env.CORS_ORIGIN
+].filter(Boolean);
+
 const corsOptions = {
-  origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+  origin: function (origin, callback) {
+    // Allow requests with no origin (mobile apps, curl, etc.)
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.indexOf(origin) !== -1 || process.env.NODE_ENV !== 'production') {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 };
 app.use(cors(corsOptions));
 
